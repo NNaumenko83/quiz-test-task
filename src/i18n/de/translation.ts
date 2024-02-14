@@ -1,0 +1,43 @@
+export const de = {
+    hat_gender_do_you_identify_with:
+        'Mit welchem Geschlecht identifizieren Sie sich',
+    please_share_how_do_you_identify_yourself:
+        'Bitte teilen Sie mit, wie Sie sich identifizieren',
+    female: 'Weiblich',
+    male: 'Männlich',
+    other: 'Andere',
+    what_is_your_age: 'Wie alt sind Sie',
+    years: '{{years}} Jahre',
+    what_do_you_hate: 'Was hassen Sie',
+    hate: 'hassen',
+    the_most_in_a_book: 'am meisten in einem Buch',
+    lack_oof_logic: 'Mangel an Logik',
+    a_slow_speed: 'Eine langsame Geschwindigkeit',
+    lack_of_humor: 'Mangel an Humor',
+    way_too_generic_ending: 'Viel zu generisches Ende',
+    what_are_your_favorite_topics: 'Was sind deine Lieblingsthemen',
+    choose_up_to_3_topics_you_like: 'Wählen Sie bis zu 3 Themen, die Sie mögen',
+    werewolf: 'Werwolf',
+    action: 'Aktion',
+    royal_obsessioon: 'Königliche Besessenheit',
+    billionaire: 'Milliardär',
+    romance: 'Romantik',
+    young_adult: 'Junge Erwachsene',
+    bad_boy: 'Schlechter Junge',
+    next: 'Weiter',
+    finding_collections_for_you: 'Sammlungen für dich finden',
+    email: 'E-Mail',
+    enter_your_email_to_get_full_access:
+        'Geben Sie Ihre E-Mail-Adresse ein, um vollen Zugriff zu erhalten',
+    your_email: 'Deine E-Mail',
+    by_continuing_i_agree_with_and_:
+        'Indem ich fortfahre, stimme ich der Datenschutzrichtlinie zu',
+    privacy_policy: 'Datenschutz-Bestimmungen',
+    and: 'und',
+    terms_of_use: 'Nutzungsbedingungen',
+    thank_you: 'Danke',
+    for_supporting_us_and_passing_quiz:
+        'für die Unterstützung und das Bestehen des Quiz',
+    download_my_answers: 'Meine Antworten herunterladen',
+    retake_quiz: 'Quiz erneut machen',
+}
