@@ -6,20 +6,24 @@ import Snap from 'snapsvg-cjs'
 
 const PageOne = () => {
     const { t } = useTranslation()
-    const countRef = useRef(null)
+    const countRef = useRef<SVGTextElement>(null)
 
     useEffect(() => {
-        // Анімація зміни значення тексту
         const count = countRef.current
-        const countValue = parseInt(count.textContent, 10)
+        let countValue: number | undefined
+        if (count && count.textContent !== null) {
+            countValue = parseInt(count.textContent, 10)
+        }
 
-        let startTime
-        function updateText(timestamp) {
+        let startTime: number
+        function updateText(timestamp: number) {
             if (!startTime) startTime = timestamp
             const progress = timestamp - startTime
             const progressValue = Math.min(progress / 5000, 1)
-            const animatedValue = Math.ceil(progressValue * countValue)
-            count.textContent = animatedValue + '%'
+            const animatedValue = Math.ceil(progressValue * (countValue || 0))
+            if (count) {
+                count.textContent = animatedValue + '%'
+            }
 
             if (progress < 5000) {
                 requestAnimationFrame(updateText)
@@ -27,7 +31,6 @@ const PageOne = () => {
         }
         requestAnimationFrame(updateText)
 
-        // Анімація прокресу шляху
         const s = Snap('#animated')
         const progress = s.select('#progress')
 
@@ -35,7 +38,7 @@ const PageOne = () => {
         Snap.animate(
             0,
             251.2,
-            function (value) {
+            function (value: string) {
                 progress.attr({ 'stroke-dasharray': value + ',251.2' })
             },
             5000,
@@ -46,7 +49,7 @@ const PageOne = () => {
         <div>
             <h2>{t('what_is_your_age')}</h2>
             Home
-            <Title>What is your preffered language</Title>
+            <Title>What is your preferred language</Title>
             <LanguagesList />
             <svg id="animated" viewBox="0 0 600 600">
                 <circle cx="50" cy="50" r="45" fill="#FDB900" />
