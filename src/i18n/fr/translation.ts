@@ -1,10 +1,10 @@
 export const fr = {
-    hat_gender_do_you_identify_with: 'Avec quel genre vous identifiez-vous',
+    what_gender_do_you_identify_with: 'Avec quel genre vous identifiez-vous',
     please_share_how_do_you_identify_yourself:
         'Veuillez partager comment vous vous identifiez',
-    female: 'Féminin',
-    male: 'Masculin',
-    other: 'Autre',
+    Female: 'Féminin',
+    Male: 'Masculin',
+    Other: 'Autre',
     what_is_your_age: 'Quel âge avez-vous',
     years: '{{years}} ans',
     what_do_you_hate: "Qu'est-ce que tu détestes",

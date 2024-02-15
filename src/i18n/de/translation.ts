@@ -1,11 +1,11 @@
 export const de = {
-    hat_gender_do_you_identify_with:
+    what_gender_do_you_identify_with:
         'Mit welchem Geschlecht identifizieren Sie sich',
     please_share_how_do_you_identify_yourself:
         'Bitte teilen Sie mit, wie Sie sich identifizieren',
-    female: 'Weiblich',
-    male: 'Männlich',
-    other: 'Andere',
+    Female: 'Weiblich',
+    Male: 'Männlich',
+    Other: 'Andere',
     what_is_your_age: 'Wie alt sind Sie',
     years: '{{years}} Jahre',
     what_do_you_hate: 'Was hassen Sie',

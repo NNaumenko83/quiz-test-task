@@ -1,10 +1,10 @@
 export const en = {
-    hat_gender_do_you_identify_with: 'What gender do you identify with',
+    what_gender_do_you_identify_with: 'What gender do you identify with',
     please_share_how_do_you_identify_yourself:
         'Please share how do you identify yourself',
-    female: 'Feemale',
-    male: 'Male',
-    other: 'Other',
+    Female: 'Feemale',
+    Male: 'Male',
+    Other: 'Other',
     what_is_your_age: 'What is your age',
     years: '{{years}} years',
     what_do_you_hate: 'What do you',
