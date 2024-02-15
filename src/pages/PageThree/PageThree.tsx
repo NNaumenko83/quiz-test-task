@@ -1,6 +1,3 @@
-import React from 'react'
-import Title from '../../components/Title/Title'
-
 import { useTranslation } from 'react-i18next'
 import AgesList from '../../components/AgesList/AgesList'
 
