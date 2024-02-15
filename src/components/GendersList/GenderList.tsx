@@ -16,7 +16,12 @@ const GenderList = () => {
         if (gender && quiz) {
             localStorage.setItem('quiz', JSON.stringify({ ...quiz, gender }))
             navigate('/quiz/3')
+            return
+        } else {
+            localStorage.setItem('quiz', JSON.stringify({ gender }))
         }
+
+        navigate('/quiz/3')
     }
 
     return (

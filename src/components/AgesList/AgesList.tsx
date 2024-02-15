@@ -13,18 +13,21 @@ const AgesList = () => {
     const handleButtonClick: React.MouseEventHandler<
         HTMLButtonElement
     > = event => {
-        const gender = event.currentTarget.getAttribute('data-gender')
-        if (gender && quiz) {
-            localStorage.setItem('quiz', JSON.stringify({ ...quiz, gender }))
-            navigate('/quiz/3')
+        const age = event.currentTarget.getAttribute('data-age')
+        if (age && quiz) {
+            localStorage.setItem('quiz', JSON.stringify({ ...quiz, age }))
+        } else {
+            localStorage.setItem('quiz', JSON.stringify({ age }))
         }
+
+        navigate('/quiz/4')
     }
 
     return (
         <ul>
             {AGES.map((age, index) => (
                 <li key={age}>
-                    <button onClick={handleButtonClick} data-gender={age}>
+                    <button onClick={handleButtonClick} data-age={age}>
                         {index < AGES.length - 1
                             ? t('years', { years: age })
                             : `${age}`}
