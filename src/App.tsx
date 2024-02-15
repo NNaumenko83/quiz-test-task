@@ -17,7 +17,10 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Navigate to="/quiz/1" />} />
+                <Route
+                    path="/"
+                    element={<Navigate to="/quiz/1" /* replace */ />}
+                />
                 <Route path="/quiz" element={<SharedLayout />}>
                     <Route path="1" element={<PageOne />} />
                     <Route path="2" element={<PageTwo />} />
