@@ -9,8 +9,6 @@ const PageOne = () => {
 
     return (
         <Container>
-            <h2>{t('what_is_your_age')}</h2>
-            Home
             <Title>What is your preferred language</Title>
             <LanguagesList />
         </Container>

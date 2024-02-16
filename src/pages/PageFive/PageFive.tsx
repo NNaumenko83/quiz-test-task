@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Title from '../../components/Title/Title'
 
-import { useTranslation } from 'react-i18next'
 import FavoriteTopicsForm from '../../components/FavoriteTopicsForm/FavoriteTopicsForm'
 import { Navigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
 
 const PageFive = () => {
-    const { t } = useTranslation()
     const [loading, setLoading] = useState(false)
     const [redirect, setRedirect] = useState(false)
 

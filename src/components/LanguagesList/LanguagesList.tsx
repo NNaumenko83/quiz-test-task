@@ -19,7 +19,6 @@ const LanguagesList = () => {
 
     return (
         <>
-            <h3>{i18next.language}</h3>
             <ButtonsWrapper>
                 {Object.values(LOCALS).map(lang => (
                     <li key={lang[1]}>
