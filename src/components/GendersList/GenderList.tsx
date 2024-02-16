@@ -3,6 +3,7 @@ import { GENDERS } from '../../constants/genders'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
+import { ButtonsWrapper, GenderButton, StylesImage } from './GenderList.styled'
 
 const GenderList = () => {
     const { t } = useTranslation()
@@ -25,15 +26,19 @@ const GenderList = () => {
     }
 
     return (
-        <ul>
+        <ButtonsWrapper>
             {GENDERS.map(gender => (
-                <li key={gender}>
-                    <button onClick={handleButtonClick} data-gender={gender}>
-                        {t(`${gender}`)}
-                    </button>
+                <li key={gender.type}>
+                    <GenderButton
+                        onClick={handleButtonClick}
+                        data-gender={gender.type}
+                    >
+                        <StylesImage src={gender.image} width={48} />
+                        {t(`${gender.type}`)}
+                    </GenderButton>
                 </li>
             ))}
-        </ul>
+        </ButtonsWrapper>
     )
 }
 
