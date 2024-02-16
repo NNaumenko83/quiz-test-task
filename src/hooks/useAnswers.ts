@@ -23,11 +23,11 @@ export const useAnswers = () => {
         },
         [t('what_do_you_hate_the_most_in_a_book')]: {
             type: t('multiple_select'),
-            answer: quiz.hates.map(hate => t(hate)),
+            answer: quiz.hates.map((hate: string | string[]) => t(hate)),
         },
         [t('what_are_your_favorite_topics')]: {
             type: t('bubble'),
-            answer: quiz.topics.map(topic => t(topic)),
+            answer: quiz.topics.map((topic: string | string[]) => t(topic)),
         },
         Email: {
             type: 'email',

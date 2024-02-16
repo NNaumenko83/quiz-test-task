@@ -19,7 +19,7 @@ const EmailForm = () => {
         setIsValid(true)
     }
 
-    const handleSubmit = e => {
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = e => {
         e.preventDefault()
         localStorage.setItem('quiz', JSON.stringify({ ...quiz, email }))
 
