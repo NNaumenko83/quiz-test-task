@@ -1,4 +1,14 @@
 export const es = {
+    what_is_your_preffered_language: 'Cuál es tu idioma preferido',
+    title: 'título',
+    type: 'tipo',
+    answer: 'respuesta',
+    single_select_image: 'selección única de imagen',
+    single_select: 'selección única',
+    multiple_select: 'selección múltiple',
+    bubble: 'burbuja',
+    what_do_you_hate_the_most_in_a_book: 'Qué es lo que más odias en un libro',
+    // =====
     what_gender_do_you_identify_with: 'Con qué género te identificas',
     please_share_how_do_you_identify_yourself:
         'Por favor, comparte cómo te identificas',

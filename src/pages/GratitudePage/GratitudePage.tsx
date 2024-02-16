@@ -1,46 +1,24 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
-import { useTranslation } from 'react-i18next'
 import { Parser } from '@json2csv/plainjs'
+import { useAnswers } from '../../hooks/useAnswers'
 
 const GratitudePage = () => {
-    const quiz = getQuizFromLocalStorage()
-    console.log('quiz:', quiz)
-
-    const { t } = useTranslation()
-    const answers = {
-        what: {
-            type: 'string',
-            answer: 'test',
-        },
-        why: {
-            type: 'string',
-            answer: 'test',
-        },
-        when: {
-            type: 'string',
-            answer: ['test1', 'test2'],
-        },
-    }
-
-    // const answers = {
-    //     [t('what_gender_do_you_identify_with')]: {
-    //         type: 'string',
-    //         answer: 'test',
-    //     },
-    // }
-    console.log('answers:', answers)
-
     const navigate = useNavigate()
+
+    const answers = useAnswers()
+
     const handleButtonClick = () => {
         localStorage.removeItem('quiz')
         navigate('/quiz/1')
     }
 
-    /* ============ */
-    const fields = ['Order', 'title', 'type', 'answer']
-    const data = []
+    const data: {
+        Order: number
+        title: string
+        type: string
+        answer: string
+    }[] = []
 
     Object.keys(answers).forEach((key, index) => {
         const answer = answers[key].answer
@@ -62,11 +40,9 @@ const GratitudePage = () => {
         }
     })
 
-    console.log('data:', data)
-
     const parser = new Parser()
-    const csv = parser.parse(data, { fields })
-    console.log(csv)
+    const csv = parser.parse(data)
+    console.log('csv:', csv)
 
     const downloadCsv = () => {
         const blob = new Blob([csv], { type: 'text/csv' })

@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { emailRegexp } from '../../constants/regex'
 import { useNavigate } from 'react-router-dom'
+import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
 
 const EmailForm = () => {
     const [email, setEmail] = useState('')
     const [isValid, setIsValid] = useState(false)
     const navigate = useNavigate()
+    const quiz = getQuizFromLocalStorage()
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = e => {
         setEmail(e.target.value)
-        console.log(!emailRegexp.test(email))
+
         if (!emailRegexp.test(email)) {
             setIsValid(false)
             return
@@ -19,12 +21,10 @@ const EmailForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        if (!emailRegexp.test(email)) {
-            setIsValid(false)
-        } else {
-            console.log('Email is valid:', email)
-            navigate('/gratitude')
-        }
+        localStorage.setItem('quiz', JSON.stringify({ ...quiz, email }))
+
+        console.log('Email is valid:', email)
+        navigate('/gratitude')
     }
 
     return (

@@ -1,4 +1,16 @@
 export const en = {
+    // ==========
+    what_is_your_preffered_language: 'What is your preffered language',
+    title: 'title',
+    type: 'type',
+    answer: 'answer',
+    single_select_image: 'single-select-image',
+    single_select: 'single-select',
+    multiple_select: 'multiple-select',
+    bubble: 'bubble',
+    what_do_you_hate_the_most_in_a_book: 'What do you hate the most in a book',
+
+    // ============
     what_gender_do_you_identify_with: 'What gender do you identify with',
     please_share_how_do_you_identify_yourself:
         'Please share how do you identify yourself',

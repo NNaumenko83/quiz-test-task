@@ -1,4 +1,15 @@
 export const de = {
+    what_is_your_preffered_language: 'Was ist deine bevorzugte Sprache',
+    title: 'Titel',
+    type: 'Typ',
+    answer: 'Antwort',
+    single_select_image: 'Einzelbildauswahl',
+    single_select: 'Einzelwahl',
+    multiple_select: 'Mehrfachauswahl',
+    bubble: 'Blase',
+    what_do_you_hate_the_most_in_a_book:
+        'Was hassen Sie am meisten in einem Buch',
+    // =====
     what_gender_do_you_identify_with:
         'Mit welchem Geschlecht identifizieren Sie sich',
     please_share_how_do_you_identify_yourself:

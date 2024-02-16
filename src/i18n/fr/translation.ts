@@ -1,4 +1,16 @@
 export const fr = {
+    what_is_your_preffered_language: 'Quelle est votre langue préférée',
+    title: 'titre',
+    type: 'type',
+    answer: 'réponse',
+    single_select_image: "sélection unique d'image",
+    single_select: 'sélection unique',
+    multiple_select: 'sélection multiple',
+    bubble: 'bulle',
+    what_do_you_hate_the_most_in_a_book:
+        'Que détestez-vous le plus dans un livre',
+
+    // =====
     what_gender_do_you_identify_with: 'Avec quel genre vous identifiez-vous',
     please_share_how_do_you_identify_yourself:
         'Veuillez partager comment vous vous identifiez',
