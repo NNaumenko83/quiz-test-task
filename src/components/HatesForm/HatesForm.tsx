@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
 
 const HATES: string[] = [
     'Lack of logic',
@@ -10,8 +11,7 @@ const HATES: string[] = [
 
 const HatesForm = () => {
     const [selectedHates, setSelectedHates] = useState<string[]>([])
-    const quizString = localStorage.getItem('quiz')
-    const quiz = quizString ? JSON.parse(quizString) : null
+    const quiz = useMemo(() => getQuizFromLocalStorage(), [])
     const navigate = useNavigate()
 
     useEffect(() => {

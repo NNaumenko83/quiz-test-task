@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 import { AGES } from '../../constants/ages'
+import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
 
 const AgesList = () => {
     const { t } = useTranslation()
     const navigate = useNavigate()
-    const quizString = localStorage.getItem('quiz')
-    const quiz = quizString ? JSON.parse(quizString) : null
+    const quiz = useMemo(() => getQuizFromLocalStorage(), [])
 
     const handleButtonClick: React.MouseEventHandler<
         HTMLButtonElement

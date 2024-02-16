@@ -2,12 +2,12 @@ import React from 'react'
 import { GENDERS } from '../../constants/genders'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
+import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
 
 const GenderList = () => {
     const { t } = useTranslation()
     const navigate = useNavigate()
-    const quizString = localStorage.getItem('quiz')
-    const quiz = quizString ? JSON.parse(quizString) : null
+    const quiz = getQuizFromLocalStorage()
 
     const handleButtonClick: React.MouseEventHandler<
         HTMLButtonElement

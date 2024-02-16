@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
+
+import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
 // import { useNavigate } from 'react-router-dom'
 
 const TOPICS: string[] = [
@@ -10,11 +12,13 @@ const TOPICS: string[] = [
     'Young Adult',
 ]
 
-const FavoriteTopicsForm = () => {
+interface FavoriteTopicsFormProps {
+    loading: (loading: boolean) => void
+}
+
+const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
     const [selectedTopics, setSelectedTopics] = useState<string[]>([])
-    console.log('selectedTopics:', selectedTopics)
-    const quizString = localStorage.getItem('quiz')
-    const quiz = quizString ? JSON.parse(quizString) : null
+    const quiz = useMemo(() => getQuizFromLocalStorage(), [])
 
     // const navigate = useNavigate()
     useEffect(() => {
@@ -38,10 +42,12 @@ const FavoriteTopicsForm = () => {
         e,
     ): void => {
         e.preventDefault()
-
-        if (selectedTopics.length > 3) {
-            console.log('More than three')
+        if (!quiz.gender || !quiz.age || !quiz.hates || !quiz.topics) {
+            console.log('QUIZZZZ')
+            return
         }
+        console.log('Loading')
+        loading(true)
     }
 
     return (
@@ -63,7 +69,9 @@ const FavoriteTopicsForm = () => {
                 <button
                     type="submit"
                     onClick={handleSubmit}
-                    disabled={selectedTopics.length === 0}
+                    disabled={
+                        selectedTopics.length === 0 || selectedTopics.length > 3
+                    }
                 >
                     Next
                 </button>

@@ -3,7 +3,6 @@ import LanguagesList from '../../components/LanguagesList/LanguagesList'
 import { useTranslation } from 'react-i18next'
 
 import Container from '../../components/Container/Container'
-import Loader from '../../components/Loader/Loader'
 
 const PageOne = () => {
     const { t } = useTranslation()
@@ -14,7 +13,6 @@ const PageOne = () => {
             Home
             <Title>What is your preferred language</Title>
             <LanguagesList />
-            <Loader />
         </Container>
     )
 }
