@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Header from '../Header/Header'
 import Main from '../Main/Main'

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { PartOfBar, StyledProgressBar } from './ProgressBar.styled'
 
 type IProgressBarProps = {

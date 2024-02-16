@@ -1,4 +1,3 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Parser } from '@json2csv/plainjs'
 import { useAnswers } from '../../hooks/useAnswers'

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Container from '../Container/Container'
 import { useLocation } from 'react-router-dom'
 import { SlArrowLeft } from 'react-icons/sl'
