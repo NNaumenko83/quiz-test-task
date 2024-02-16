@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const HATES: string[] = [
     'Lack of logic',
@@ -11,6 +12,7 @@ const HatesForm = () => {
     const [selectedHates, setSelectedHates] = useState<string[]>([])
     const quizString = localStorage.getItem('quiz')
     const quiz = quizString ? JSON.parse(quizString) : null
+    const navigate = useNavigate()
 
     useEffect(() => {
         const hatesFromLocalStorage: string[] = quiz?.hates || []
@@ -29,8 +31,13 @@ const HatesForm = () => {
         )
     }
 
-    const handleNextClick = (): void => {
+    const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = (
+        e,
+    ): void => {
+        e.preventDefault()
+
         console.log('AAAAAA')
+        navigate('/quiz/5')
     }
 
     return (
@@ -49,7 +56,11 @@ const HatesForm = () => {
                         <label htmlFor={`hate-${index}`}>{hate}</label>
                     </div>
                 ))}
-                <button type="button" onClick={handleNextClick}>
+                <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    disabled={selectedHates.length === 0}
+                >
                     Next
                 </button>
             </form>
