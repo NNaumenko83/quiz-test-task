@@ -149,9 +149,9 @@ h6 {
 /* Стилі за замовчуванням */
 body {
     /* font-family: 'Manrope SemiBold', sans-serif; */
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.33;
     letter-spacing: 0.03rem;
     color: #111111;
-    background-color: #36173d;
+    background-color: #1f002b;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { LOCALS } from '../../i18n/constants'
 import { useNavigate } from 'react-router-dom'
 import i18next from 'i18next'
-import { ButtonsWrapper } from './LanguagesList.styled'
+import { ButtonsWrapper, LanguageButton } from './LanguagesList.styled'
 
 const LanguagesList = () => {
     const navigate = useNavigate()
@@ -22,9 +22,12 @@ const LanguagesList = () => {
             <ButtonsWrapper>
                 {Object.values(LOCALS).map(lang => (
                     <li key={lang[1]}>
-                        <button onClick={handleButtonClick} data-lang={lang[0]}>
+                        <LanguageButton
+                            onClick={handleButtonClick}
+                            data-lang={lang[0]}
+                        >
                             {lang[1]}
-                        </button>
+                        </LanguageButton>
                     </li>
                 ))}
             </ButtonsWrapper>
