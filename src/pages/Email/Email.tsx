@@ -1,7 +1,12 @@
 import React from 'react'
+import EmailForm from '../../components/EmailForm/EmailForm'
 
 const Email = () => {
-    return <div>Email</div>
+    return (
+        <div>
+            <EmailForm />
+        </div>
+    )
 }
 
 export default Email

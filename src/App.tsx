@@ -17,21 +17,18 @@ function App() {
     return (
         <>
             <Routes>
-                <Route
-                    path="/"
-                    element={<Navigate to="/quiz/1" /* replace */ />}
-                />
-                <Route path="/quiz" element={<SharedLayout />}>
-                    <Route path="1" element={<PageOne />} />
-                    <Route path="2" element={<PageTwo />} />
-                    <Route path="3" element={<PageThree />} />
-                    <Route path="4" element={<PageFour />} />
-                    <Route path="5" element={<PageFive />} />
-                </Route>
+                <Route path="/" element={<Navigate to="/quiz/1" />} />
+                <Route element={<SharedLayout />}>
+                    <Route path="quiz/1" element={<PageOne />} />
+                    <Route path="quiz/2" element={<PageTwo />} />
+                    <Route path="quiz/3" element={<PageThree />} />
+                    <Route path="quiz/4" element={<PageFour />} />
+                    <Route path="quiz/5" element={<PageFive />} />
 
-                <Route path="/email" element={<Email />} />
-                <Route path="/gratitude" element={<GratitudePage />} />
-                <Route path="*" element={<NotFound />} />
+                    <Route path="/email" element={<Email />} />
+                    <Route path="/gratitude" element={<GratitudePage />} />
+                    <Route path="*" element={<NotFound />} />
+                </Route>
             </Routes>
         </>
     )

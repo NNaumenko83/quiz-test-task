@@ -18,7 +18,11 @@ interface FavoriteTopicsFormProps {
 
 const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
     const [selectedTopics, setSelectedTopics] = useState<string[]>([])
-    const quiz = useMemo(() => getQuizFromLocalStorage(), [])
+    const quiz = useMemo(
+        () => getQuizFromLocalStorage(),
+        [selectedTopics.length],
+    )
+    console.log('quiz:', quiz)
 
     // const navigate = useNavigate()
     useEffect(() => {
