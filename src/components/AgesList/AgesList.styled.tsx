@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const AgeButton = styled.button`
-    width: 335px;
-    height: 76px;
+    width: 20.9375rem;
+    height: 4.75rem;
 
     display: flex;
     justify-content: center;
@@ -10,8 +10,8 @@ export const AgeButton = styled.button`
 
     padding: 1.3125rem 1.25rem;
 
-    border: 2px solid rgb(54, 23, 61);
-    border-radius: 16px;
+    border: 0.125rem solid rgb(54, 23, 61);
+    border-radius: 1rem;
 
     background: #36173d;
 
