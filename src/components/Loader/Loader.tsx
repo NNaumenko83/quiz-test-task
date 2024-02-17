@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import Snap from 'snapsvg-cjs'
+import { LooaderText } from './Loader.styled'
 
 const Loader = () => {
     const countRef = useRef<SVGTextElement>(null)
@@ -43,29 +44,34 @@ const Loader = () => {
         )
     }, [])
     return (
-        <svg id="animated" viewBox="0 0 600 600">
-            <circle cx="50" cy="50" r="45" fill="#FDB900" />
+        <svg id="animated" viewBox="0 0 100 100" width={200}>
+            <circle
+                cx="50"
+                cy="50"
+                r="37"
+                fill="none"
+                stroke="#FFFFFF"
+                strokeWidth="5"
+            />
             <path
                 id="progress"
-                strokeLinecap="round"
-                strokeWidth="15"
-                stroke="#081feb"
+                strokeWidth="5"
+                stroke="#E4229C"
                 fill="none"
                 d="M50 10
            a 40 40 0 0 1 0 80
            a 40 40 0 0 1 0 -80"
             ></path>
-            <text
+            <LooaderText
                 ref={countRef}
                 id="count"
                 x="50"
                 y="50"
                 textAnchor="middle"
                 dy="7"
-                fontSize="20"
             >
                 100%
-            </text>
+            </LooaderText>
         </svg>
     )
 }

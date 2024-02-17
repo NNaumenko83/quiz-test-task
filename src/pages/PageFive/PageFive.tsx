@@ -7,6 +7,7 @@ import Container from '../../components/Container/Container'
 import { useTranslation } from 'react-i18next'
 import Title from '../../components/Title/Title'
 import Text from '../../components/Text/Text'
+import { LoaderWrapper } from './PageFive.styled'
 
 const PageFive = () => {
     const [loading, setLoading] = useState(false)
@@ -28,9 +29,17 @@ const PageFive = () => {
 
     return (
         <Container>
-            <Title>{t('what_are_your_favorite_topics')}?</Title>
-            <Text>{t('choose_up_to_3_topics_you_like')}</Text>
-            {loading ? <Loader /> : <FavoriteTopicsForm loading={setLoading} />}
+            {loading ? (
+                <LoaderWrapper>
+                    <Loader />
+                </LoaderWrapper>
+            ) : (
+                <>
+                    <Title>{t('what_are_your_favorite_topics')}?</Title>
+                    <Text>{t('choose_up_to_3_topics_you_like')}</Text>
+                    <FavoriteTopicsForm loading={setLoading} />
+                </>
+            )}
         </Container>
     )
 }

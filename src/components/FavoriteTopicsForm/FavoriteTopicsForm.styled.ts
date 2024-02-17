@@ -29,8 +29,6 @@ export const StyledInput = styled.input`
 `
 
 export const CustomCheckBoxLabel = styled.label<CheckBoxProps>`
-    border: 1.5px solid rgba(255, 255, 255, 0);
-
     width: 88px;
     height: 88px;
 

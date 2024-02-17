@@ -29,7 +29,7 @@ export const es = {
     werewolf: 'Hombre lobo',
     action: 'Acción',
     royal_obsessioon: 'Obsesión real',
-    billionaire: 'Multimillonario',
+    billionaire: 'Multimill...',
     romance: 'Romance',
     young_adult: 'Joven adulto',
     bad_boy: 'Chico malo',

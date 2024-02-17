@@ -62,7 +62,7 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
         if (!quiz.gender || !quiz.age || !quiz.hates || !quiz.topics) {
             return
         }
-        console.log('Loading')
+
         loading(true)
     }
 
@@ -74,7 +74,7 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
                         {item.map((topic, subIndex) => (
                             <CustomCheckBoxLabel
                                 htmlFor={`topic-${index}-${subIndex}`}
-                                checked={false}
+                                checked={selectedTopics.includes(topic.type)}
                                 key={subIndex}
                             >
                                 <StyledInput
