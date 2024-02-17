@@ -11,13 +11,19 @@ export const Form = styled.form`
     gap: 0.9375rem;
 `
 
-export const CheckBoxBorder = styled.span`
+export const CheckBoxBorder = styled.span<CheckBoxProps>`
     width: 1.4375rem;
-    height: 23px;
+    height: 1.4375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
 
     border: 1px solid rgb(228, 34, 155);
     border-radius: 8px;
-    background: rgb(109, 67, 118);
+    background: ${props => (props.checked ? '#E4229B' : '#6d4376')};
+
+    transition: all 250ms linear;
 `
 
 export const StyledInput = styled.input`
@@ -44,7 +50,7 @@ export const CustomCheckBoxLabel = styled.label<CheckBoxProps>`
 
     padding: 1.3125rem 1.25rem;
 
-    border: 1px solid ${props => (props.checked ? '#E4229B' : '#36173D')};
+    border: 2px solid ${props => (props.checked ? '#E4229B' : '#36173D')};
 
     border-radius: 1rem;
 
@@ -59,7 +65,13 @@ export const CustomCheckBoxLabel = styled.label<CheckBoxProps>`
     color: #ffffff;
 
     cursor: pointer;
+
+    transition: all 250ms linear;
 `
 export const CheckIcon = styled(FaCheck)<CheckBoxProps>`
-    display: ${props => (props.checked ? 'block' : 'none')};
+    width: 12px;
+    height: 12px;
+    transition: all 250ms linear;
+
+    opacity: ${props => (props.checked ? '1' : '0')};
 `
