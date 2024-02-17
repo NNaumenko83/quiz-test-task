@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 import { AGES } from '../../constants/ages'
 import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
+import { AgeButton, ButtonsList } from './AgesList.styled'
+import Container from '../Container/Container'
 
 const AgesList = () => {
     const { t } = useTranslation()
@@ -24,17 +26,19 @@ const AgesList = () => {
     }
 
     return (
-        <ul>
-            {AGES.map((age, index) => (
-                <li key={age}>
-                    <button onClick={handleButtonClick} data-age={age}>
-                        {index < AGES.length - 1
-                            ? t('years', { years: age })
-                            : `${age}`}
-                    </button>
-                </li>
-            ))}
-        </ul>
+        <Container>
+            <ButtonsList>
+                {AGES.map((age, index) => (
+                    <li key={age}>
+                        <AgeButton onClick={handleButtonClick} data-age={age}>
+                            {index < AGES.length - 1
+                                ? t('years', { years: age })
+                                : `${age}`}
+                        </AgeButton>
+                    </li>
+                ))}
+            </ButtonsList>
+        </Container>
     )
 }
 
