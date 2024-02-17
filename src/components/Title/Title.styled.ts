@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const StyledTitle = styled.h2`
     margin-bottom: 24px;
+    text-align: center;
 
     color: #f2f3f5;
     font-family: 'NunitoSans-Bold';

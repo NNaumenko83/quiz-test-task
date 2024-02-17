@@ -40,6 +40,7 @@ export const StyledLink = styled(Link)`
 `
 
 export const StyledHeader = styled.header`
-    padding-top: 16px;
+    padding-top: 1rem;
     padding-bottom: 16px;
+    margin-bottom: 1.5rem;
 `
