@@ -22,7 +22,7 @@ export const de = {
     what_do_you_hate: 'Was hassen Sie',
     hate: 'hassen',
     the_most_in_a_book: 'am meisten in einem Buch',
-    lack_oof_logic: 'Mangel an Logik',
+    lack_of_logic: 'Mangel an Logik',
     a_slow_speed: 'Eine langsame Geschwindigkeit',
     lack_of_humor: 'Mangel an Humor',
     way_too_generic_ending: 'Viel zu generisches Ende',

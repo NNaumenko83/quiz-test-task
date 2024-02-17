@@ -8,18 +8,22 @@ import {
     Form,
     StyledInput,
 } from './HatesFor.styled'
+import { useTranslation } from 'react-i18next'
+import { Button } from '../Button/Button'
 
 const HATES: string[] = [
-    'Lack of logic',
-    'A slow speed',
-    'Lack of humor',
-    'Way too generic ending',
+    'lack_of_logic',
+    'a_slow_speed',
+    'lack_of_humor',
+    'way_too_generic_ending',
 ]
 
 const HatesForm = () => {
     const [selectedHates, setSelectedHates] = useState<string[]>([])
+    console.log('selectedHates:', selectedHates)
     const quiz = useMemo(() => getQuizFromLocalStorage(), [])
     const navigate = useNavigate()
+    const { t } = useTranslation()
 
     useEffect(() => {
         const hatesFromLocalStorage: string[] = quiz?.hates || []
@@ -46,37 +50,38 @@ const HatesForm = () => {
     }
 
     return (
-        <div>
-            <h2>Hates Checkbox</h2>
-            <Form>
-                {HATES.map((hate, index) => (
-                    <CustomCheckBoxLabel
-                        key={index}
-                        htmlFor={`hate-${index}`}
-                        checked={selectedHates.includes(hate)}
-                    >
-                        {hate}
-                        <StyledInput
-                            type="checkbox"
-                            id={`hate-${index}`}
-                            value={hate}
-                            checked={selectedHates.includes(hate)}
-                            onChange={() => handleCheckboxChange(hate)}
-                        />
-                        <CheckBoxBorder checked={selectedHates.includes(hate)}>
-                            <CheckIcon checked={selectedHates.includes(hate)} />
-                        </CheckBoxBorder>
-                    </CustomCheckBoxLabel>
-                ))}
-                <button
-                    type="submit"
-                    onClick={handleSubmit}
-                    disabled={selectedHates.length === 0}
+        <Form>
+            {HATES.map((hate, index) => (
+                <CustomCheckBoxLabel
+                    key={index}
+                    htmlFor={`hate-${index}`}
+                    checked={selectedHates.includes(t(`${hate}`))}
                 >
-                    Next
-                </button>
-            </Form>
-        </div>
+                    {t(`${hate}`)}
+                    <StyledInput
+                        type="checkbox"
+                        id={`hate-${index}`}
+                        value={t(`${hate}`)}
+                        checked={selectedHates.includes(t(`${hate}`))}
+                        onChange={() => handleCheckboxChange(t(`${hate}`))}
+                    />
+                    <CheckBoxBorder
+                        checked={selectedHates.includes(t(`${hate}`))}
+                    >
+                        <CheckIcon
+                            checked={selectedHates.includes(t(`${hate}`))}
+                        />
+                    </CheckBoxBorder>
+                </CustomCheckBoxLabel>
+            ))}
+            <Button
+                type="submit"
+                onClick={handleSubmit}
+                disabled={selectedHates.length === 0}
+            >
+                Next
+            </Button>
+        </Form>
     )
 }
 

@@ -20,7 +20,7 @@ export const es = {
     what_do_you_hate: 'Qué odias',
     hate: 'odias',
     the_most_in_a_book: 'lo más en un libro',
-    lack_oof_logic: 'Falta de lógica',
+    lack_of_logic: 'Falta de lógica',
     a_slow_speed: 'Una velocidad lenta',
     lack_of_humor: 'Falta de humor',
     way_too_generic_ending: 'Un final demasiado genérico',
