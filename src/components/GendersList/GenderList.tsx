@@ -31,7 +31,7 @@ const GenderList = () => {
                 <li key={gender.type}>
                     <GenderButton
                         onClick={handleButtonClick}
-                        data-gender={gender.type}
+                        data-gender={t(`${gender.type}`)}
                     >
                         <StylesImage src={gender.image} width={48} />
                         {t(`${gender.type}`)}
