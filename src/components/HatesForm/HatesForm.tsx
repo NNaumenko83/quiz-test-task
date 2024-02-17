@@ -28,7 +28,7 @@ const HatesForm = () => {
     useEffect(() => {
         const hatesFromLocalStorage: string[] = quiz?.hates || []
         setSelectedHates(hatesFromLocalStorage)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleCheckboxChange = (hate: string): void => {
@@ -62,16 +62,12 @@ const HatesForm = () => {
                     <StyledInput
                         type="checkbox"
                         id={`hate-${index}`}
-                        value={t(`${hate}`)}
-                        checked={selectedHates.includes(t(`${hate}`))}
-                        onChange={() => handleCheckboxChange(t(`${hate}`))}
+                        value={hate}
+                        checked={selectedHates.includes(hate)}
+                        onChange={() => handleCheckboxChange(hate)}
                     />
-                    <CheckBoxBorder
-                        checked={selectedHates.includes(t(`${hate}`))}
-                    >
-                        <CheckIcon
-                            checked={selectedHates.includes(t(`${hate}`))}
-                        />
+                    <CheckBoxBorder checked={selectedHates.includes(hate)}>
+                        <CheckIcon checked={selectedHates.includes(hate)} />
                     </CheckBoxBorder>
                 </CustomCheckBoxLabel>
             ))}
