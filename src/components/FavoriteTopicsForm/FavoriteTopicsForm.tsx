@@ -3,6 +3,14 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
 import { TOPICS } from '../../constants/topics'
 import { Button } from '../Button/Button'
+import {
+    CustomCheckBoxLabel,
+    InnerInputsWrapper,
+    InputsWrapper,
+    StyledInput,
+} from './FavoriteTopicsForm.styled'
+import { useTranslation } from 'react-i18next'
+
 // import { useNavigate } from 'react-router-dom'
 
 interface FavoriteTopicsFormProps {
@@ -16,9 +24,11 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
         [selectedTopics.length],
     )
 
+    const { t } = useTranslation()
     const topicsArray = []
 
     for (let i = 0; i < TOPICS.length; i += 2) {
+        console.log('TOPICS.length:', TOPICS.length)
         if (i + 1 < TOPICS.length) {
             topicsArray.push([TOPICS[i], TOPICS[i + 1]])
             continue
@@ -27,7 +37,6 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
     }
     console.log('topicsArray:', topicsArray)
 
-    // const navigate = useNavigate()
     useEffect(() => {
         const topicsFromLocalStorage: string[] = quiz?.topics || []
         setSelectedTopics(topicsFromLocalStorage)
@@ -59,31 +68,38 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
 
     return (
         <form>
-            {topicsArray.map((item, index) => (
-                <div key={index}>
-                    {item.map((topic, subIndex) => (
-                        <div key={subIndex}>
-                            <input
-                                type="checkbox"
-                                id={`topic-${index}-${subIndex}`}
-                                value={topic.type}
-                                checked={selectedTopics.includes(topic.type)}
-                                onChange={() =>
-                                    handleCheckboxChange(topic.type)
-                                }
-                            />
-                            <img
-                                src={topic.image}
-                                width={48}
-                                alt={topic.type}
-                            />
-                            <label htmlFor={`topic-${index}-${subIndex}`}>
-                                {topic.type}
-                            </label>
-                        </div>
-                    ))}
-                </div>
-            ))}
+            <InputsWrapper>
+                {topicsArray.map((item, index) => (
+                    <InnerInputsWrapper key={index}>
+                        {item.map((topic, subIndex) => (
+                            <CustomCheckBoxLabel
+                                htmlFor={`topic-${index}-${subIndex}`}
+                                checked={false}
+                                key={subIndex}
+                            >
+                                <StyledInput
+                                    type="checkbox"
+                                    id={`topic-${index}-${subIndex}`}
+                                    value={topic.type}
+                                    checked={selectedTopics.includes(
+                                        topic.type,
+                                    )}
+                                    onChange={() =>
+                                        handleCheckboxChange(topic.type)
+                                    }
+                                />
+                                <img
+                                    src={topic.image}
+                                    width={25}
+                                    alt={topic.type}
+                                />
+                                {t(topic.type)}
+                            </CustomCheckBoxLabel>
+                        ))}
+                    </InnerInputsWrapper>
+                ))}
+            </InputsWrapper>
+
             <Button
                 type="submit"
                 onClick={handleSubmit}
