@@ -56,7 +56,7 @@ const HatesForm = () => {
                 <CustomCheckBoxLabel
                     key={index}
                     htmlFor={`hate-${index}`}
-                    checked={selectedHates.includes(t(`${hate}`))}
+                    checked={selectedHates.includes(hate)}
                 >
                     {t(`${hate}`)}
                     <StyledInput
