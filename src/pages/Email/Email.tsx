@@ -1,10 +1,14 @@
 import EmailForm from '../../components/EmailForm/EmailForm'
+import Main from '../../components/Main/Main'
+import { EmailContainer } from './Email.styled'
 
 const Email = () => {
     return (
-        <div>
-            <EmailForm />
-        </div>
+        <Main>
+            <EmailContainer>
+                <EmailForm />
+            </EmailContainer>
+        </Main>
     )
 }
 
