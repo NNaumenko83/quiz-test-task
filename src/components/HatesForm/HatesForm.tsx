@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
+import {
+    CheckBoxBorder,
+    CheckIcon,
+    CustomCheckBoxLabel,
+    Form,
+    StyledInput,
+} from './HatesFor.styled'
 
 const HATES: string[] = [
     'Lack of logic',
@@ -35,26 +42,31 @@ const HatesForm = () => {
         e,
     ): void => {
         e.preventDefault()
-
-        console.log('AAAAAA')
         navigate('/quiz/5')
     }
 
     return (
         <div>
             <h2>Hates Checkbox</h2>
-            <form>
+            <Form>
                 {HATES.map((hate, index) => (
-                    <div key={index}>
-                        <input
+                    <CustomCheckBoxLabel
+                        key={index}
+                        htmlFor={`hate-${index}`}
+                        checked={selectedHates.includes(hate)}
+                    >
+                        {hate}
+                        <StyledInput
                             type="checkbox"
                             id={`hate-${index}`}
                             value={hate}
                             checked={selectedHates.includes(hate)}
                             onChange={() => handleCheckboxChange(hate)}
                         />
-                        <label htmlFor={`hate-${index}`}>{hate}</label>
-                    </div>
+                        <CheckBoxBorder checked={selectedHates.includes(hate)}>
+                            <CheckIcon checked={selectedHates.includes(hate)} />
+                        </CheckBoxBorder>
+                    </CustomCheckBoxLabel>
                 ))}
                 <button
                     type="submit"
@@ -63,7 +75,7 @@ const HatesForm = () => {
                 >
                     Next
                 </button>
-            </form>
+            </Form>
         </div>
     )
 }
