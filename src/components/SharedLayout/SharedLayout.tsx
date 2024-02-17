@@ -2,13 +2,15 @@ import { Suspense } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Header from '../Header/Header'
 import Main from '../Main/Main'
+import { useQuiz } from '../../hooks/useQuiz'
 
 const SharedLayout = () => {
     const location = useLocation()
+    const { loading } = useQuiz()
 
     return (
         <>
-            {location.pathname.includes('quiz') && <Header />}
+            {location.pathname.includes('quiz') && !loading && <Header />}
             <Main>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Outlet />

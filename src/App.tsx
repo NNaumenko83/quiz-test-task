@@ -3,6 +3,7 @@ import { lazy } from 'react'
 import './App.css'
 import './i18n/i18n'
 import SharedLayout from './components/SharedLayout/SharedLayout'
+import { QuizProvider } from './context/QuizContext'
 // import Email from './pages/Email/Email'
 // import GratitudePage from './pages/GratitudePage/GratitudePage'
 // import NotFound from './pages/NotFound/NotFound'
@@ -18,7 +19,7 @@ const NotFound = lazy(() => import('./pages/NotFound/NotFound'))
 
 function App() {
     return (
-        <>
+        <QuizProvider>
             <Routes>
                 <Route path="/" element={<Navigate to="/quiz/1" />} />
                 <Route element={<SharedLayout />}>
@@ -33,7 +34,7 @@ function App() {
                 <Route path="/gratitude" element={<GratitudePage />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
-        </>
+        </QuizProvider>
     )
 }
 

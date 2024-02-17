@@ -8,9 +8,11 @@ import { useTranslation } from 'react-i18next'
 import Title from '../../components/Title/Title'
 import Text from '../../components/Text/Text'
 import { LoaderWrapper } from './PageFive.styled'
+import { useQuiz } from '../../hooks/useQuiz'
 
 const PageFive = () => {
-    const [loading, setLoading] = useState(false)
+    const { loading, setLoading } = useQuiz()
+
     const [redirect, setRedirect] = useState(false)
     const { t } = useTranslation()
 
