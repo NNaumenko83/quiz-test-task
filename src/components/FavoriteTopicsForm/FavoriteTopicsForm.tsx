@@ -21,6 +21,7 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
     const [selectedTopics, setSelectedTopics] = useState<string[]>([])
     const quiz = useMemo(
         () => getQuizFromLocalStorage(),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [selectedTopics.length],
     )
 
