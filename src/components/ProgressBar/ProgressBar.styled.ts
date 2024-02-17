@@ -19,7 +19,7 @@ export const StyledProgressBar = styled.div`
 
 export const PartOfBar = styled.div<PartOfBarProps>`
     height: 10px;
-    flex-basis: calc(100% / 6);
+    flex-basis: calc(100% / 5);
 
     background-color: ${props => (props.active ? '#E4229C' : '#E8EAF2')};
 `

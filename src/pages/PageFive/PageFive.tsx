@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import FavoriteTopicsForm from '../../components/FavoriteTopicsForm/FavoriteTopicsForm'
 import { Navigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
+import Container from '../../components/Container/Container'
 
 const PageFive = () => {
     const [loading, setLoading] = useState(false)
@@ -22,9 +23,9 @@ const PageFive = () => {
     }
 
     return (
-        <div>
+        <Container>
             {loading ? <Loader /> : <FavoriteTopicsForm loading={setLoading} />}
-        </div>
+        </Container>
     )
 }
 

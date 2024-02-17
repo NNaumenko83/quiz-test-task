@@ -28,6 +28,7 @@ const HatesForm = () => {
     useEffect(() => {
         const hatesFromLocalStorage: string[] = quiz?.hates || []
         setSelectedHates(hatesFromLocalStorage)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleCheckboxChange = (hate: string): void => {

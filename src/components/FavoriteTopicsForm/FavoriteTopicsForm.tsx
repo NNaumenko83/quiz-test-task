@@ -1,16 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react'
 
 import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
+import { TOPICS } from '../../constants/topics'
+import { Button } from '../Button/Button'
 // import { useNavigate } from 'react-router-dom'
-
-const TOPICS: string[] = [
-    'Werewolf',
-    'Action',
-    'Royal Obsession',
-    'Billionaire',
-    'Romance',
-    'Young Adult',
-]
 
 interface FavoriteTopicsFormProps {
     loading: (loading: boolean) => void
@@ -28,6 +21,7 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
     useEffect(() => {
         const topicsFromLocalStorage: string[] = quiz?.topics || []
         setSelectedTopics(topicsFromLocalStorage)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleCheckboxChange = (topic: string): void => {
@@ -47,7 +41,6 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
     ): void => {
         e.preventDefault()
         if (!quiz.gender || !quiz.age || !quiz.hates || !quiz.topics) {
-            console.log('QUIZZZZ')
             return
         }
         console.log('Loading')
@@ -63,14 +56,15 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
                         <input
                             type="checkbox"
                             id={`topic-${index}`}
-                            value={topic}
-                            checked={selectedTopics.includes(topic)}
-                            onChange={() => handleCheckboxChange(topic)}
+                            value={topic.type}
+                            checked={selectedTopics.includes(topic.type)}
+                            onChange={() => handleCheckboxChange(topic.type)}
                         />
-                        <label htmlFor={`topic-${index}`}>{topic}</label>
+                        <img src={topic.image} width={48} />
+                        <label htmlFor={`topic-${index}`}>{topic.type}</label>
                     </div>
                 ))}
-                <button
+                <Button
                     type="submit"
                     onClick={handleSubmit}
                     disabled={
@@ -78,7 +72,7 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
                     }
                 >
                     Next
-                </button>
+                </Button>
             </form>
         </div>
     )
