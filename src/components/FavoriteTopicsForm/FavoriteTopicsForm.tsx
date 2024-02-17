@@ -15,7 +15,17 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
         () => getQuizFromLocalStorage(),
         [selectedTopics.length],
     )
-    console.log('quiz:', quiz)
+
+    const topicsArray = []
+
+    for (let i = 0; i < TOPICS.length; i += 2) {
+        if (i + 1 < TOPICS.length) {
+            topicsArray.push([TOPICS[i], TOPICS[i + 1]])
+            continue
+        }
+        topicsArray.push([TOPICS[i]])
+    }
+    console.log('topicsArray:', topicsArray)
 
     // const navigate = useNavigate()
     useEffect(() => {
@@ -48,33 +58,42 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
     }
 
     return (
-        <div>
-            <h2>Topics Checkbox</h2>
-            <form>
-                {TOPICS.map((topic, index) => (
-                    <div key={index}>
-                        <input
-                            type="checkbox"
-                            id={`topic-${index}`}
-                            value={topic.type}
-                            checked={selectedTopics.includes(topic.type)}
-                            onChange={() => handleCheckboxChange(topic.type)}
-                        />
-                        <img src={topic.image} width={48} />
-                        <label htmlFor={`topic-${index}`}>{topic.type}</label>
-                    </div>
-                ))}
-                <Button
-                    type="submit"
-                    onClick={handleSubmit}
-                    disabled={
-                        selectedTopics.length === 0 || selectedTopics.length > 3
-                    }
-                >
-                    Next
-                </Button>
-            </form>
-        </div>
+        <form>
+            {topicsArray.map((item, index) => (
+                <div key={index}>
+                    {item.map((topic, subIndex) => (
+                        <div key={subIndex}>
+                            <input
+                                type="checkbox"
+                                id={`topic-${index}-${subIndex}`}
+                                value={topic.type}
+                                checked={selectedTopics.includes(topic.type)}
+                                onChange={() =>
+                                    handleCheckboxChange(topic.type)
+                                }
+                            />
+                            <img
+                                src={topic.image}
+                                width={48}
+                                alt={topic.type}
+                            />
+                            <label htmlFor={`topic-${index}-${subIndex}`}>
+                                {topic.type}
+                            </label>
+                        </div>
+                    ))}
+                </div>
+            ))}
+            <Button
+                type="submit"
+                onClick={handleSubmit}
+                disabled={
+                    selectedTopics.length === 0 || selectedTopics.length > 3
+                }
+            >
+                Next
+            </Button>
+        </form>
     )
 }
 
