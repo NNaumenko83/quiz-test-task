@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Quiz is a web application built using React and Vite that allows users to choose their preferred language at the beginning of the quiz, answer questions, and enter their email. After completing the quiz, users have the option to download a CSV file with the answers and retake the quiz.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Language Selection:** Users can choose their preferred language before starting the quiz.
+- **Question Answering:** Answer questions related to the quiz.
+- **Email Entry:** Enter email for further communication or records.
+- **CSV Download:** Download a CSV file containing the quiz answers.
+- **Retake Quiz:** Option to retake the quiz after completion.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Follow these steps to set up and run Quiz locally on your machine.
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Before you begin, ensure you have the following installed:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [Node.js](https://nodejs.org/) (LTS version)
+
+### Installation
+
+1. Clone the repository to your local machine: `git clone https://github.com/NNaumenko83/quiz-test-task`
+
+2. Navigate to the project directory: `cd quiz-test-task`
+
+3. Install the project's dependencies: `npm install`
+
+### Usage
+
+1. Start the development server: `npm run dev`
+
+2. Open your web browser and navigate to http://localhost:5173/nova-poshta-test-task/. The page will automatically reload whenever you save changes to the project files.s.
