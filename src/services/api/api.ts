@@ -12,7 +12,6 @@ interface IBody {
 }
 
 export const sendUserData = async (body: IBody) => {
-    console.log('body:', body)
     const res = await axios.post('/answers', body)
     return res.data
 }

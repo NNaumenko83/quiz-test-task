@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 type EmailProps = {
-    isValid: boolean
+    $isvalid: boolean
 }
 
 export const StyledInput = styled.input<EmailProps>`
@@ -14,7 +14,7 @@ export const StyledInput = styled.input<EmailProps>`
     align-items: center;
     padding: 21px 20px;
 
-    border: 2px solid ${proops => (proops.isValid ? '#36173D' : '#d90800')};
+    border: 2px solid ${proops => (proops.$isvalid ? '#36173D' : '#d90800')};
     border-radius: 16px;
     background: rgb(54, 23, 61);
 

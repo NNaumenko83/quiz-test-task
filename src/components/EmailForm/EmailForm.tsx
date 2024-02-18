@@ -76,7 +76,7 @@ const EmailForm = () => {
                         id="email"
                         value={email}
                         onChange={handleChange}
-                        isValid={isValid}
+                        $isvalid={isValid}
                         placeholder={t('your_email')}
                     />
                 </label>
