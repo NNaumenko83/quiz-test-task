@@ -57,6 +57,11 @@ export const CustomCheckBoxLabel = styled.label<CheckBoxProps>`
     cursor: pointer;
 
     transition: all 250ms linear;
+
+    &:hover {
+        transform: scale(1.05);
+        color: #e4229c;
+    }
 `
 
 export const InputsWrapper = styled.div`
