@@ -13,7 +13,9 @@ import { toast, Bounce } from 'react-toastify'
 
 const EmailForm = () => {
     const [email, setEmail] = useState('')
+
     const [isValid, setIsValid] = useState(false)
+
     const navigate = useNavigate()
     const quiz = getQuizFromLocalStorage()
     const { t } = useTranslation()
@@ -22,7 +24,7 @@ const EmailForm = () => {
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = e => {
         setEmail(e.target.value)
 
-        if (!emailRegexp.test(email)) {
+        if (!emailRegexp.test(e.target.value)) {
             setIsValid(false)
             return
         }
