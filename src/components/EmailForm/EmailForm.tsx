@@ -6,6 +6,8 @@ import { ErrorWrapper, StyledForm, StyledInput } from './EmailForm.styled'
 import ErrorMessage from '../ErrorMessage/ErrorMessage'
 import { Button } from '../Button/Button'
 import { useTranslation } from 'react-i18next'
+import { sendUserData } from '../../services/api/api'
+import { getLangFromLocalStorage } from '../../helpers/getLangFromLocalStorage'
 
 const EmailForm = () => {
     const [email, setEmail] = useState('')
@@ -24,12 +26,29 @@ const EmailForm = () => {
         setIsValid(true)
     }
 
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = e => {
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = async e => {
         e.preventDefault()
         localStorage.setItem('quiz', JSON.stringify({ ...quiz, email }))
+        const lang = getLangFromLocalStorage()
 
-        console.log('Email is valid:', email)
-        navigate('/gratitude')
+        if (lang)
+            try {
+                const res = await sendUserData({
+                    language: lang,
+                    gender: t(quiz.gender),
+                    age: quiz.age,
+                    hate: quiz.hates.map((hate: string | string[]) => t(hate)),
+                    topics: quiz.topics.map((topic: string | string[]) =>
+                        t(topic),
+                    ),
+                    email: quiz.email,
+                })
+
+                console.log(res)
+                navigate('/gratitude')
+            } catch (error) {
+                console.log('error:', error)
+            }
     }
 
     return (

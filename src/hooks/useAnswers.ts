@@ -35,6 +35,5 @@ export const useAnswers = () => {
         },
     }
 
-    console.log('answers:', answers)
     return answers
 }
