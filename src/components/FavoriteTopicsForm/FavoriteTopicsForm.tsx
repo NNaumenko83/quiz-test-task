@@ -11,6 +11,7 @@ import {
     StyledInput,
 } from './FavoriteTopicsForm.styled'
 import { useTranslation } from 'react-i18next'
+import { StyledForm } from '../EmailForm/EmailForm.styled'
 
 // import { useNavigate } from 'react-router-dom'
 
@@ -30,14 +31,12 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
     const topicsArray = []
 
     for (let i = 0; i < TOPICS.length; i += 2) {
-        console.log('TOPICS.length:', TOPICS.length)
         if (i + 1 < TOPICS.length) {
             topicsArray.push([TOPICS[i], TOPICS[i + 1]])
             continue
         }
         topicsArray.push([TOPICS[i]])
     }
-    console.log('topicsArray:', topicsArray)
 
     useEffect(() => {
         const topicsFromLocalStorage: string[] = quiz?.topics || []
@@ -88,7 +87,7 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
     }
 
     return (
-        <form>
+        <StyledForm>
             <InputsWrapper>
                 {topicsArray.map((item, index) => (
                     <InnerInputsWrapper key={index}>
@@ -130,7 +129,7 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
             >
                 {t('next')}
             </Button>
-        </form>
+        </StyledForm>
     )
 }
 

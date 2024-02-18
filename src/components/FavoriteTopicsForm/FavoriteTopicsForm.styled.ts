@@ -75,3 +75,8 @@ export const InnerInputsWrapper = styled.div`
     flex-direction: column;
     gap: 0.5rem;
 `
+export const StyledForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
