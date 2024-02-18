@@ -7,7 +7,6 @@ import { useQuiz } from '../../hooks/useQuiz'
 const SharedLayout = () => {
     const location = useLocation()
     const { loading } = useQuiz()
-    console.log('loading:', loading)
 
     return (
         <>

@@ -21,7 +21,7 @@ const PageFive = () => {
             setTimeout(() => {
                 setLoading(false)
                 setRedirect(true)
-            }, 5005)
+            }, 5000)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loading])

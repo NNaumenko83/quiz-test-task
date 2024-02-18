@@ -4,7 +4,9 @@ import './App.css'
 import './i18n/i18n'
 import SharedLayout from './components/SharedLayout/SharedLayout'
 import { QuizProvider } from './context/QuizContext'
-import GratitudePage from './pages/GratitudePage/GratitudePage'
+import RestrictedRoute from './components/RestrictedRoute'
+
+// import GratitudePage from './pages/GratitudePage/GratitudePage'
 
 const PageOne = lazy(() => import('./pages/PageOne/PageOne'))
 const PageTwo = lazy(() => import('./pages/PageTwo/PageTwo'))
@@ -13,6 +15,7 @@ const PageFour = lazy(() => import('./pages/PageFour/PageFour'))
 const PageFive = lazy(() => import('./pages/PageFive/PageFive'))
 const Email = lazy(() => import('./pages/Email/Email'))
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'))
+const GratitudePage = lazy(() => import('./pages/GratitudePage/GratitudePage'))
 
 function App() {
     return (
@@ -25,10 +28,12 @@ function App() {
                     <Route path="quiz/3" element={<PageThree />} />
                     <Route path="quiz/4" element={<PageFour />} />
                     <Route path="quiz/5" element={<PageFive />} />
-                </Route>
 
-                <Route path="/email" element={<Email />} />
-                <Route path="/gratitude" element={<GratitudePage />} />
+                    <Route element={<RestrictedRoute />}>
+                        <Route path="email" element={<Email />} />
+                        <Route path="gratitude" element={<GratitudePage />} />
+                    </Route>
+                </Route>
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </QuizProvider>

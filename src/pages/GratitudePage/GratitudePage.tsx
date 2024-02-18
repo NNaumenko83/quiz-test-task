@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Parser } from '@json2csv/plainjs'
 import { useAnswers } from '../../hooks/useAnswers'
-import Main from '../../components/Main/Main'
+
 import {
     ButtonsWrapper,
     DownloadButton,
@@ -69,26 +69,20 @@ const GratitudePage = () => {
         document.body.removeChild(a)
     }
     return (
-        <Main>
-            <GratitudeContainer>
-                <Title>
-                    <TitleThankYou>{t('thank_you')}</TitleThankYou>
-                    <TitleText>
-                        {t('for_supporting_us_and_passing_quiz')}
-                    </TitleText>
-                </Title>
-                <img src={checkMark} width={118} />
-                <ButtonsWrapper>
-                    <DownloadButton onClick={downloadCsv}>
-                        <PiDownloadSimple />
-                        {t('download_my_answers')}
-                    </DownloadButton>
-                    <Button onClick={handleButtonClick}>
-                        {t('retake_quiz')}
-                    </Button>
-                </ButtonsWrapper>
-            </GratitudeContainer>
-        </Main>
+        <GratitudeContainer>
+            <Title>
+                <TitleThankYou>{t('thank_you')}</TitleThankYou>
+                <TitleText>{t('for_supporting_us_and_passing_quiz')}</TitleText>
+            </Title>
+            <img src={checkMark} width={118} />
+            <ButtonsWrapper>
+                <DownloadButton onClick={downloadCsv}>
+                    <PiDownloadSimple />
+                    {t('download_my_answers')}
+                </DownloadButton>
+                <Button onClick={handleButtonClick}>{t('retake_quiz')}</Button>
+            </ButtonsWrapper>
+        </GratitudeContainer>
     )
 }
 
