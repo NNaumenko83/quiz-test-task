@@ -42,6 +42,7 @@ const EmailForm = () => {
                         value={email}
                         onChange={handleChange}
                         isValid={isValid}
+                        placeholder={t('your_email')}
                     />
                 </label>
                 <ErrorWrapper>
