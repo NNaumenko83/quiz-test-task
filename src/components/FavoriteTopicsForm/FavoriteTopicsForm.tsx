@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { toast, Bounce } from 'react-toastify'
 
 import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
-import { TOPICS } from '../../constants/topics'
+// import { TOPICS } from '../../constants/topics'
 import { Button } from '../Button/Button'
 import {
     CustomCheckBoxLabel,
@@ -12,6 +12,7 @@ import {
 } from './FavoriteTopicsForm.styled'
 import { useTranslation } from 'react-i18next'
 import { StyledForm } from '../EmailForm/EmailForm.styled'
+import { getTopicsByAge } from '../../helpers/getTopics'
 
 // import { useNavigate } from 'react-router-dom'
 
@@ -27,15 +28,17 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
         [selectedTopics.length],
     )
 
+    const topics = getTopicsByAge()
+
     const { t } = useTranslation()
     const topicsArray = []
 
-    for (let i = 0; i < TOPICS.length; i += 2) {
-        if (i + 1 < TOPICS.length) {
-            topicsArray.push([TOPICS[i], TOPICS[i + 1]])
+    for (let i = 0; i < topics.length; i += 2) {
+        if (i + 1 < topics.length) {
+            topicsArray.push([topics[i], topics[i + 1]])
             continue
         }
-        topicsArray.push([TOPICS[i]])
+        topicsArray.push([topics[i]])
     }
 
     useEffect(() => {

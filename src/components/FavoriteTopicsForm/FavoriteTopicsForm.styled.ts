@@ -69,6 +69,7 @@ export const InputsWrapper = styled.div`
     display: flex;
     gap: 0.4375rem;
     margin-bottom: 80px;
+    justify-content: center;
 
     & > :nth-child(2n) {
         margin-top: 25px;
