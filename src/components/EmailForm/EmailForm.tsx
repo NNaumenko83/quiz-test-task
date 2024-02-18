@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next'
 import { sendUserData } from '../../services/api/api'
 import { getLangFromLocalStorage } from '../../helpers/getLangFromLocalStorage'
 import { Oval } from 'react-loader-spinner'
+import { toast, Bounce } from 'react-toastify'
 
 const EmailForm = () => {
     const [email, setEmail] = useState('')
@@ -36,7 +37,7 @@ const EmailForm = () => {
         if (lang) setLoading(true)
         {
             try {
-                const res = await sendUserData({
+                await sendUserData({
                     language: lang,
                     gender: t(quiz.gender),
                     age: quiz.age,
@@ -47,10 +48,19 @@ const EmailForm = () => {
                     email: quiz.email,
                 })
 
-                console.log(res)
                 navigate('/gratitude')
             } catch (error) {
-                console.log('error:', error)
+                toast.error('Error', {
+                    position: 'top-center',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'dark',
+                    transition: Bounce,
+                })
             } finally {
                 setLoading(false)
             }

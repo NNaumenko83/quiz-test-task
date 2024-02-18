@@ -17,7 +17,6 @@ export const Button = ({
     onClick,
     ...otherProps
 }: ButtonProps) => {
-    console.log(disabled)
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
         if (onClick) {
             onClick(event)

@@ -20,7 +20,6 @@ const HATES: string[] = [
 
 const HatesForm = () => {
     const [selectedHates, setSelectedHates] = useState<string[]>([])
-    console.log('selectedHates:', selectedHates)
     const quiz = useMemo(() => getQuizFromLocalStorage(), [])
     const navigate = useNavigate()
     const { t } = useTranslation()
