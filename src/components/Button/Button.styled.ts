@@ -8,7 +8,7 @@ export const StyledButton = styled.button`
     width: 20.9375rem;
     height: 3.5rem;
 
-    padding: 1rem 7.75rem;
+    padding: 1rem 1rem;
     color: #ffffff;
 
     cursor: ${props => (props.disabled ? 'no-drop' : 'pointer')};

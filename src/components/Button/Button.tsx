@@ -12,7 +12,7 @@ interface ButtonProps {
 
 export const Button = ({
     type = 'button',
-    disabled = true,
+    disabled = false,
     children,
     onClick,
     ...otherProps
