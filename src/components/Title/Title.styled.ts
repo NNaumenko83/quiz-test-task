@@ -4,11 +4,11 @@ const StyledTitle = styled.h2`
     margin-bottom: 24px;
     text-align: center;
 
-    color: #f2f3f5;
-    font-family: 'NunitoSans-Bold';
-    font-size: 28px;
+    color: #ffffff;
+    font-family: 'AlbertSans-ExtraBold';
+    font-size: 30px;
 
-    line-height: 1.21;
-    letter-spacing: -1%;
+    line-height: 1.26;
+    letter-spacing: -2%;
 `
 export default StyledTitle

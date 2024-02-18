@@ -6,7 +6,7 @@ const PageThree = () => {
     const { t } = useTranslation()
     return (
         <div>
-            <Title>{t('what_is_your_age')}</Title>
+            <Title>{t('what_is_your_age')}?</Title>
 
             <AgesList />
         </div>

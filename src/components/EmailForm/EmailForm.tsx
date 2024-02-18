@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { emailRegexp } from '../../constants/regex'
 import { useNavigate } from 'react-router-dom'
 import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
+import { ErrorWrapper, StyledForm, StyledInput } from './EmailForm.styled'
+import ErrorMessage from '../ErrorMessage/ErrorMessage'
+import { Button } from '../Button/Button'
 
 const EmailForm = () => {
     const [email, setEmail] = useState('')
@@ -29,21 +32,26 @@ const EmailForm = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <StyledForm onSubmit={handleSubmit}>
                 <label htmlFor="email">
-                    <input
+                    <StyledInput
                         type="email"
                         id="email"
                         value={email}
                         onChange={handleChange}
-                        style={{ border: isValid ? '' : '1px solid red' }}
+                        isValid={isValid}
                     />
-                    {!isValid && <p style={{ color: 'red' }}>Invalid email</p>}
                 </label>
-                <button type="submit" disabled={!isValid}>
+                <ErrorWrapper>
+                    {!isValid && email.length > 1 && (
+                        <ErrorMessage>Invalid email</ErrorMessage>
+                    )}
+                </ErrorWrapper>
+
+                <Button type="submit" disabled={!isValid}>
                     Next
-                </button>
-            </form>
+                </Button>
+            </StyledForm>
         </>
     )
 }

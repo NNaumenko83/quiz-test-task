@@ -5,10 +5,10 @@ import { Navigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
 import Container from '../../components/Container/Container'
 import { useTranslation } from 'react-i18next'
-import Title from '../../components/Title/Title'
 import Text from '../../components/Text/Text'
-import { LoaderWrapper } from './PageFive.styled'
+import { InfoLoaderText, LoaderWrapper } from './PageFive.styled'
 import { useQuiz } from '../../hooks/useQuiz'
+import SmallTitle from '../../components/SmallTitle/SmallTitle'
 
 const PageFive = () => {
     const { loading, setLoading } = useQuiz()
@@ -34,10 +34,15 @@ const PageFive = () => {
             {loading ? (
                 <LoaderWrapper>
                     <Loader />
+                    <InfoLoaderText>
+                        {t('finding_collections_for_you')}...
+                    </InfoLoaderText>
                 </LoaderWrapper>
             ) : (
                 <>
-                    <Title>{t('what_are_your_favorite_topics')}?</Title>
+                    <SmallTitle>
+                        {t('what_are_your_favorite_topics')}?
+                    </SmallTitle>
                     <Text>{t('choose_up_to_3_topics_you_like')}</Text>
                     <FavoriteTopicsForm loading={setLoading} />
                 </>
