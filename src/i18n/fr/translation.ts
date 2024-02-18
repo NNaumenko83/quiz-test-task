@@ -52,4 +52,6 @@ export const fr = {
     download_my_answers: 'Télécharger mes réponses',
     retake_quiz: 'Refaire le quiz',
     invalid_email: 'Email invalide',
+    not_found: 'Page non trouvée',
+    to_home: 'à la maison',
 }

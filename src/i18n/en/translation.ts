@@ -49,4 +49,6 @@ export const en = {
     download_my_answers: 'Download my answers',
     retake_quiz: 'Retake quiz',
     invalid_email: 'Invalid Email',
+    not_found: 'Page not found',
+    to_home: 'to home',
 }

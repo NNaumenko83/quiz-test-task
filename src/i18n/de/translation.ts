@@ -51,4 +51,6 @@ export const de = {
     download_my_answers: 'Meine Antworten herunterladen',
     retake_quiz: 'Quiz erneut machen',
     invalid_email: 'Ungültige E-Mail',
+    not_found: 'Seite nicht gefunden',
+    to_home: 'nach Hause',
 }

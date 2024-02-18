@@ -48,4 +48,6 @@ export const es = {
     download_my_answers: 'Descargar mis respuestas',
     retake_quiz: 'Volver a hacer la prueba',
     invalid_email: 'Email inválido',
+    not_found: 'Página no encontrada',
+    to_home: 'a casa',
 }
