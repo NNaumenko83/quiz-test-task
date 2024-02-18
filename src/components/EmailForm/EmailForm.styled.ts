@@ -15,6 +15,9 @@ export const StyledInput = styled.input<EmailProps>`
     padding: 21px 20px;
 
     border: 2px solid ${proops => (proops.$isvalid ? '#36173D' : '#d90800')};
+    &:placeholder-shown {
+        border-color: #36173d;
+    }
     border-radius: 16px;
     background: rgb(54, 23, 61);
 

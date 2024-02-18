@@ -81,12 +81,12 @@ const EmailForm = () => {
                     />
                 </label>
                 <ErrorWrapper>
-                    {!isValid && (
+                    {!isValid && email && (
                         <ErrorMessage>{t('invalid_email')}</ErrorMessage>
                     )}
                 </ErrorWrapper>
 
-                <Button type="submit" disabled={!isValid || looading}>
+                <Button type="submit" disabled={!isValid || !email || looading}>
                     {looading ? (
                         <Oval
                             visible={true}
