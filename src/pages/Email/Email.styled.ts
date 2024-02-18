@@ -13,6 +13,7 @@ export const Text = styled.p`
     font-size: 15px;
     line-height: 1.83;
     letter-spacing: 0%;
+    text-align: center;
 `
 
 export const AgreementText = styled.p`

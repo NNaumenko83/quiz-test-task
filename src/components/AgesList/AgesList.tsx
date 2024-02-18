@@ -17,7 +17,10 @@ const AgesList = () => {
     > = event => {
         const age = event.currentTarget.getAttribute('data-age')
         if (age && quiz) {
-            localStorage.setItem('quiz', JSON.stringify({ ...quiz, age }))
+            localStorage.setItem(
+                'quiz',
+                JSON.stringify({ ...quiz, age, topics: [] }),
+            )
         } else {
             localStorage.setItem('quiz', JSON.stringify({ age }))
         }
