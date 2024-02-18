@@ -3,7 +3,7 @@ import axios from 'axios'
 axios.defaults.baseURL = 'https://641b2a469b82ded29d4bddd7.mockapi.io/api'
 
 interface IBody {
-    language: string
+    language: string | undefined
     gender: string
     age: string
     hate: string[]

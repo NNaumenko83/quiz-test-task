@@ -23,6 +23,7 @@ const PageFive = () => {
                 setRedirect(true)
             }, 5005)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loading])
 
     if (redirect) {
