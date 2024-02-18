@@ -5,6 +5,8 @@ import './i18n/i18n'
 import SharedLayout from './components/SharedLayout/SharedLayout'
 import { QuizProvider } from './context/QuizContext'
 import RestrictedRoute from './components/RestrictedRoute'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // import GratitudePage from './pages/GratitudePage/GratitudePage'
 
@@ -36,6 +38,7 @@ function App() {
                 </Route>
                 <Route path="*" element={<NotFound />} />
             </Routes>
+            <ToastContainer />
         </QuizProvider>
     )
 }

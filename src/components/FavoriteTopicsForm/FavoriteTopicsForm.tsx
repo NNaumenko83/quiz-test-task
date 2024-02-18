@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
+import { toast, Bounce } from 'react-toastify'
 
 import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
 import { TOPICS } from '../../constants/topics'
@@ -60,7 +61,26 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
         e,
     ): void => {
         e.preventDefault()
-        if (!quiz.gender || !quiz.age || !quiz.hates || !quiz.topics) {
+        if (
+            !quiz ||
+            !quiz.gender ||
+            !quiz.age ||
+            !quiz.hates ||
+            !quiz.topics ||
+            quiz.hates.length === 0 ||
+            quiz.topics.length === 0
+        ) {
+            toast.error(`${t('error_steps')}`, {
+                position: 'top-center',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+                transition: Bounce,
+            })
             return
         }
 

@@ -50,4 +50,6 @@ export const es = {
     invalid_email: 'Email inválido',
     not_found: 'Página no encontrada',
     to_home: 'a casa',
+    error_steps:
+        'Parece que no has respondido algunas preguntas. Por favor, regresa a los pasos anteriores y proporciona respuestas.',
 }
