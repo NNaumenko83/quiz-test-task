@@ -69,7 +69,7 @@ const EmailForm = () => {
 
     return (
         <>
-            <StyledForm onSubmit={handleSubmit} autocomplete="on">
+            <StyledForm onSubmit={handleSubmit} autoComplete="on">
                 <label htmlFor="email">
                     <StyledInput
                         type="email"
