@@ -14,7 +14,7 @@ export const en = {
     what_gender_do_you_identify_with: 'What gender do you identify with',
     please_share_how_do_you_identify_yourself:
         'Please share how do you identify yourself',
-    Female: 'Feemale',
+    Female: 'Female',
     Male: 'Male',
     Other: 'Other',
     what_is_your_age: 'What is your age',
