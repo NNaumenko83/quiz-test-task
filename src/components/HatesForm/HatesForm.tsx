@@ -76,7 +76,7 @@ const HatesForm = () => {
                 onClick={handleSubmit}
                 disabled={selectedHates.length === 0}
             >
-                Next
+                {t('next')}
             </Button>
         </Form>
     )

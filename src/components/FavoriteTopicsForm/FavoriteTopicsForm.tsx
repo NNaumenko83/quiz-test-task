@@ -108,7 +108,7 @@ const FavoriteTopicsForm = ({ loading }: FavoriteTopicsFormProps) => {
                     selectedTopics.length === 0 || selectedTopics.length > 3
                 }
             >
-                Next
+                {t('next')}
             </Button>
         </form>
     )

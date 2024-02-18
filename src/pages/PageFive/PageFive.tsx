@@ -21,7 +21,7 @@ const PageFive = () => {
             setTimeout(() => {
                 setLoading(false)
                 setRedirect(true)
-            }, 5500)
+            }, 5005)
         }
     }, [loading])
 

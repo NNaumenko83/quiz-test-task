@@ -14,3 +14,23 @@ export const Text = styled.p`
     line-height: 1.83;
     letter-spacing: 0%;
 `
+
+export const AgreementText = styled.p`
+    font-family: 'AlbertSans-Medium';
+    font-size: 12px;
+    color: #ffffff;
+    margin-top: 56px;
+
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+`
+
+export const InfoLink = styled.a`
+    color: #eb2f9a;
+    transition: color 250ms linear;
+
+    &:hover {
+        color: #ff5bf4;
+    }
+`

@@ -39,8 +39,7 @@ export const es = {
     enter_your_email_to_get_full_access:
         'Ingresa tu correo electrónico para obtener acceso completo',
     your_email: 'Tu correo electrónico',
-    by_continuing_i_agree_with_and_:
-        'Al continuar, acepto la Política de privacidad',
+    by_continuing_i_agree_with: 'Al continuar, acepto la',
     privacy_policy: 'Política de privacidad',
     and: 'y',
     terms_of_use: 'Términos de uso',
@@ -48,4 +47,5 @@ export const es = {
     for_supporting_us_and_passing_quiz: 'por apoyarnos y pasar la prueba',
     download_my_answers: 'Descargar mis respuestas',
     retake_quiz: 'Volver a hacer la prueba',
+    invalid_email: 'Email inválido',
 }

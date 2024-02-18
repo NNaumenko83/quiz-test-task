@@ -5,12 +5,14 @@ import { getQuizFromLocalStorage } from '../../helpers/getQuizFromLocalStorage'
 import { ErrorWrapper, StyledForm, StyledInput } from './EmailForm.styled'
 import ErrorMessage from '../ErrorMessage/ErrorMessage'
 import { Button } from '../Button/Button'
+import { useTranslation } from 'react-i18next'
 
 const EmailForm = () => {
     const [email, setEmail] = useState('')
     const [isValid, setIsValid] = useState(false)
     const navigate = useNavigate()
     const quiz = getQuizFromLocalStorage()
+    const { t } = useTranslation()
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = e => {
         setEmail(e.target.value)
@@ -43,13 +45,13 @@ const EmailForm = () => {
                     />
                 </label>
                 <ErrorWrapper>
-                    {!isValid && email.length > 1 && (
-                        <ErrorMessage>Invalid email</ErrorMessage>
+                    {!isValid && (
+                        <ErrorMessage>{t('invalid_email')}</ErrorMessage>
                     )}
                 </ErrorWrapper>
 
                 <Button type="submit" disabled={!isValid}>
-                    Next
+                    {t('next')}
                 </Button>
             </StyledForm>
         </>

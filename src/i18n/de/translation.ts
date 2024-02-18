@@ -41,8 +41,7 @@ export const de = {
     enter_your_email_to_get_full_access:
         'Geben Sie Ihre E-Mail-Adresse ein, um vollen Zugriff zu erhalten',
     your_email: 'Deine E-Mail',
-    by_continuing_i_agree_with_and_:
-        'Indem ich fortfahre, stimme ich der Datenschutzrichtlinie zu',
+    by_continuing_i_agree_with: 'Indem ich fortfahre, stimme ich dem zu',
     privacy_policy: 'Datenschutz-Bestimmungen',
     and: 'und',
     terms_of_use: 'Nutzungsbedingungen',
@@ -51,4 +50,5 @@ export const de = {
         'für die Unterstützung und das Bestehen des Quiz',
     download_my_answers: 'Meine Antworten herunterladen',
     retake_quiz: 'Quiz erneut machen',
+    invalid_email: 'Ungültige E-Mail',
 }

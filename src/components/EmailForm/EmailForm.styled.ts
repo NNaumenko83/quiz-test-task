@@ -33,6 +33,7 @@ export const ErrorWrapper = styled.div`
     color: #d90800;
     font-family: 'AlbertSans-Medium';
     font-size: 15px;
+    margin-bottom: 1.875rem;
 
     line-height: 1.46;
 `

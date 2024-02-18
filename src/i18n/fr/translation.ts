@@ -42,8 +42,7 @@ export const fr = {
     enter_your_email_to_get_full_access:
         'Entrez votre adresse e-mail pour obtenir un accès complet',
     your_email: 'Votre adresse e-mail',
-    by_continuing_i_agree_with_and_:
-        "En continuant, j'accepte la Politique de confidentialité",
+    by_continuing_i_agree_with: "En continuant, j'accepte la",
     privacy_policy: 'Politique de confidentialité',
     and: 'et',
     terms_of_use: "Conditions d'utilisation",
@@ -52,4 +51,5 @@ export const fr = {
         'pour votre soutien et avoir passé le quiz',
     download_my_answers: 'Télécharger mes réponses',
     retake_quiz: 'Refaire le quiz',
+    invalid_email: 'Email invalide',
 }

@@ -40,7 +40,7 @@ export const en = {
     email: 'Email',
     enter_your_email_to_get_full_access: 'Enter your email to get full access',
     your_email: 'Your email',
-    by_continuing_i_agree_with_and_: 'By continuing I agree with Privacy',
+    by_continuing_i_agree_with: 'By continuing I agree with',
     privacy_policy: 'Privacy policy',
     and: 'and',
     terms_of_use: 'Terms of use',
@@ -48,4 +48,5 @@ export const en = {
     for_supporting_us_and_passing_quiz: 'for supporting us and passing quiz',
     download_my_answers: 'Download my answers',
     retake_quiz: 'Retake quiz',
+    invalid_email: 'Invalid Email',
 }
